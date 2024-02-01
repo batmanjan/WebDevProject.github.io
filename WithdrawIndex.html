@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <!-- header section -->
+    <header>
+        <h2 class="text-5xl text-center mt-8">Athletes  <span class="text-red-700 font-semibold">Dashboard</span></h2>
+    </header>
+
+    <!-- main section -->
+    <main class="w-3/4  mx-auto">
+
+
+        <!-- amount area -->
+        <section class="mt-8">
+            <div class="grid grid-cols-3 gap-4 ">
+
+                
+
+                <div class="bg-blue-100 rounded p-8">
+                    <h3 class="text-2xl">Withdraw</h3>
+                    <h4 class="text-4xl">₱<span id="withdraw-primary">00</span></h4>
+                </div>
+
+                <div class="bg-blue-100 rounded p-8">
+                    <h3 class="text-2xl">Balance</h3>
+                    <h4 class="text-4xl">₱<span id="balance-primary">2500</span></h4>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Withdraw and deposit area -->
+        <section  class="mt-8">
+            <div class="grid grid-cols-2 gap-4">
+
+                
+
+                <div  class="bg-green-100 rounded p-8">
+                    <h4 class="text-2xl mb-4">Please Withdraw</h4>
+
+                        <input id="withdraw-secondary" class="border rounded gray-400 px-4 mb-4 block w-3/4" type="text" placeholder="your withdraw amount">
+
+                        <button id="withdraw-button" class="bg-red-700 text-white px-4 rounded font-medium	py-2">Withdraw</button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <script src="../JS/banking.js"></script>
+</body>
+</html>
+

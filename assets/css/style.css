@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Roboto+Slab:wght@200;400;700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --primary-color: #800000;
+  --secondary-color: #995c4e;
+  --bg-color: #ffe5d9;
+  --hover-color: #a50707;
+
+  --nav-bg-color: #333;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  grid-template: auto 1fr / 1fr;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+main {
+  background: rgba(0, 0, 0, 0.7) url("../img/Pup.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+
+/* GLOBAL STYLES */
+.button {
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* NAVBAR */
+nav {
+  background-color: var(--nav-bg-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  align-items: center;
+}
+nav > .nav-brand {
+  color: #eee;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+nav > .nav-brand > .nav-icon {
+  width: 50px;
+  height: 50px;
+}
+nav > .nav-brand > .nav-title {
+  font-size: 1.5rem;
+}
+nav > .menu-button {
+  color: #eee;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+nav > .nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+  height: 100%;
+}
+nav > .nav-links.active {
+  display: block;
+}
+nav > .nav-links a {
+  color: #eee;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 0;
+    height: 0.19rem;
+    background: var(--primary-color);
+    position: absolute;
+    left: 0;
+    bottom: -0.375rem;
+    transition: 0.5s;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &.active::after {
+    content: "";
+    width: 0;
+    height: 0.19rem;
+    background: var(--primary-color);
+    position: absolute;
+    left: 0;
+    bottom: -0.375rem;
+    transition: 0.5s;
+    width: 100%;
+  }
+}
+
+/* HOME PAGE */
+main.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.home > .introduction {
+  color: rgb(248, 247, 247);
+  text-align: center;
+  padding: 0 2rem;
+  display: flex;
+  flex-flow: column;
+  gap: 2rem;
+}
+main.home > .introduction > .introduction-text > h1 {
+  font-size: 5rem;
+}
+main.home > .introduction > .introduction-text > p {
+  font-size: 1.5rem;
+}
+main.home > .introduction > .button {
+  width: 20%;
+  align-self: center;
+}
+
+/* LOGIN/REGISTRATION */
+main.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
+  
+}
+main.auth > .auth-form {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
+  color: white;
+  padding: 1rem;
+}
+main.auth > .auth-form > form {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+main.auth > .auth-form > form > button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  width: 100%;
+
+  &:hover {
+    background-color: var(--hover-color);
+  }
+}
+main.auth > .auth-form > form > .remember {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+main.auth > .auth-form > form > .link a {
+  color: white;
+}
+main.auth > .auth-form > form .input-box {
+  display: flex;
+}
+main.auth > .auth-form > form .input-box > i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  background-color: #17191d;
+}
+main.auth > .auth-form > form .input-box > input {
+  color: white;
+  background-color: #242629;
+  padding-left: 1rem;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+}
+
+/* DASHBOARD */
+main.dashboard {
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.dashboard > .withdrawals {
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 2rem;
+  width: 35rem;
+}
+main.dashboard > .withdrawals > .section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+
+  & > span {
+    color: var(--primary-color);
+  }
+}
+main.dashboard > .withdrawals > .container {
+  display: grid;
+  grid-template: 1fr / repeat(2, 1fr);
+  gap: 1rem;
+}
+main.dashboard > .withdrawals > .container > div {
+  min-height: 100px;
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  padding: 1rem;
+}
+main.dashboard > .withdrawals > .container > .amount-container > .title {
+  font-weight: 600;
+  color: #333;
+}
+main.dashboard > .withdrawals > .container > .amount-container > .amount {
+  font-size: 2rem;
+  font-weight: 700;
+}
+main.dashboard > .withdrawals > .container > .form-container {
+  grid-column: 1 / 3;
+}
+main.dashboard > .withdrawals > .container > .form-container > .form-title {
+  text-align: center;
+}
+main.dashboard > .withdrawals > .container > .form-container > form {
+  display: grid;
+  grid-template: repeat(3, auto) / repeat(3, auto);
+  gap: 0.4rem;
+  padding: 1rem;
+}
+main.dashboard
+  > .withdrawals
+  > .container
+  > .form-container
+  > form
+  > .form-group {
+  &:nth-child(1) {
+    grid-column: span 2;
+  }
+}
+main.dashboard
+  > .withdrawals
+  > .container
+  > .form-container
+  > form
+  > .form-group
+  > label {
+  display: block;
+  text-transform: uppercase;
+}
+main.dashboard
+  > .withdrawals
+  > .container
+  > .form-container
+  > form
+  > .form-group
+  > input {
+  outline: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+main.dashboard > .withdrawals > .container > .form-container > form > button {
+  background-color: var(--secondary-color);
+  grid-column: 3;
+  padding: 1rem 1rem;
+
+  &:hover {
+    background-color: var(--primary-color);
+  }
+}
+
+/* MEDIA QUERIES */
+/* PHONES */
+@media screen and (max-width: 480px) {
+  /* NAVBAR */
+  nav {
+    position: relative;
+  }
+  nav > .menu-button {
+    display: block;
+  }
+  nav > .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    height: max-content;
+    padding: 1rem 2rem;
+    background-color: var(--nav-bg-color);
+  }
+  nav > .nav-links > li:nth-child(1) {
+    margin-bottom: 1rem;
+  }
+
+  /* HOME */
+  main.home > .introduction > .introduction-text > h1 {
+    font-size: 3rem;
+  }
+  main.home > .introduction > .introduction-text > p {
+    font-size: 1rem;
+  }
+  main.home > .introduction > .button {
+    width: 30%;
+    align-self: center;
+  }
+
+  /* LOGIN/REGISTRATION */
+  main.auth {
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  /* Dashboard */
+  main.dashboard > .withdrawals {
+    border: none;
+    border-radius: 0;
+    padding: 1rem;
+    width: 100%;
+  }
+  main.dashboard > .withdrawals > .container > .form-container > form {
+    grid-template: auto / auto;
+  }
+  main.dashboard
+    > .withdrawals
+    > .container
+    > .form-container
+    > form
+    > .form-group:nth-child(1) {
+    grid-column: 1/2;
+  }
+  main.dashboard > .withdrawals > .container > .form-container > form > button {
+    grid-column: 1/2;
+    padding: 1rem 2rem;
+  }
+}
