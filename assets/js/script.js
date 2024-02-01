@@ -59,7 +59,7 @@ window.addEventListener("load", () => {
     withdrawalForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const scriptURL =
-        "https://script.google.com/macros/s/AKfycbwR11OLOlUbOKVQLm8dbccKVP5_edE3wHqvlWxoSLgJo7crd2d4XT2NdUyiFIwCednb/exec";
+        "https://script.google.com/macros/s/AKfycbyzqXt2CPuzFBE96P0UUqrdVI_AWhYE4swp13lpZlC6fdQFw9_mKQDqepXZuHwLZzaX/exec";
       fetch(scriptURL, { method: "POST", body: new FormData(e.target) })
         .then((response) => {
           if (response.ok) {
